@@ -5,39 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>AhorrADAS</title>
 </head>
 
 <body>
-    <!-- <section class="container">
-        <header class="navbar-brand has-background-danger-light has-text-dark">
-            <nav  role="navigation" aria-label="main navigation">
-                <a href="">AhorrADAS</a>
-                <a id="burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                    <div class="container" >
-                        <a href="" id="balance" aria-hidden="true"></a>
-                        <a href="" id="category" aria-hidden="true"></a>
-                        <a href="" id="report" aria-hidden="true"></a>
-                    </div>
-                </a>
-            </nav>
-        </header>
-
-    </section> -->
     <section>
         <header>
-            <nav>
-                <h1></h1>
-                <!-- menu burger -->
+            <nav class="has-background-danger-light navbar has-text-dark"       role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="https://cintyy73.github.io/Ahorradas/">
+                        AhorrADAS
+                        <!-- <img src="" alt="" width="112" height="28"> -->
+                    </a>
+                
+                    <a id="burger" role="button" class="navbar-burger"    aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
             </nav>
         </header>
+            <div id="modal-nav" class="navbar-menu ">
+              <div class="navbar-start">
+                    <a class="has-background-danger-light has-text-dark navbar-item">
+                    Balance
+                    </a>
+                    <a class="has-background-danger-light has-text-dark navbar-item">
+                    Categorías
+                    </a>
+                    <a class="has-background-danger-light has-text-dark navbar-item">
+                        Reporte
+                    </a>
+              </div>
+              <!-- <button id="close-modal-nav" class="modal-close is-large" aria-label="close">&times;</button> -->
+            </div>
         <main>
             <!-- seccion balance -->
             <section id="cont-balance"></section>
             <section id="cont-category"></section>
             <section id="cont-report"></section>
         </main>
+        <script src="./js/app.js"></script>
     </section>
 </body>
 

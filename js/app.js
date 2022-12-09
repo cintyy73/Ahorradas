@@ -4,20 +4,25 @@ const $ = (selector) => document.querySelector(selector);
 
 //*nav
 const burger = $("#burger");
-const balance = $("#balance");
-const report = $("#report");
-const category = $("#category");
+const modalNav = $("#modal-nav");
+const btnBalance = $("#balance");
+const btnReport = $("#report");
+const btnCategory = $("#category");
+const btnCloseModalNav = $("#close-modal-nav");
 
 
+/************FUNCTIONS*****************/
 //Functions
 
 const burgerActive = ()=>{
     burger.classList.toggle("is-active");
-    balance.innerHTML="Balance";
-    report.innerText="Report";
-    category.innerText="Category";
+    modalNav.classList.toggle("is-active");
+
 }
 
-//Events
+
+/************EVENTS*****************/
+//Events nav
 burger.addEventListener("click", burgerActive);
 console.log(burger);
+
