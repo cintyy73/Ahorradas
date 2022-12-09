@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>AhorrADAS</title>
 </head>
@@ -13,35 +15,33 @@
 <body>
     <section>
         <header>
-            <nav class="has-background-danger-light navbar has-text-dark"       role="navigation" aria-label="main navigation">
+            <nav class="has-background-danger-light navbar has-text-dark is-mobi" role="navigation"
+                aria-label="main navigation">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="https://cintyy73.github.io/Ahorradas/">
-                        AhorrADAS
-                        <!-- <img src="" alt="" width="112" height="28"> -->
+                        <h1><i class="fa-sharp fa solid fa-piggy-bank"></i>-AhorrADAS</h1>
                     </a>
-                
-                    <a id="burger" role="button" class="navbar-burger"    aria-label="menu" aria-expanded="false">
+
+                    <a id="burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                     </a>
                 </div>
             </nav>
-        </header>
             <div id="modal-nav" class="navbar-menu ">
-              <div class="navbar-start">
-                    <a class="has-background-danger-light has-text-dark navbar-item">
-                    Balance
+                <div class="navbar-end">
+                    <a href="#cont-balance" class="has-background-danger-light has-text-dark navbar-item"><i class="fa-sharp fa solid fa-arrow-trend-up"></i>-Balance
                     </a>
-                    <a class="has-background-danger-light has-text-dark navbar-item">
-                    Categorías
+                    <a href="#cont-category" class="has-background-danger-light has-text-dark navbar-item"><i class="fa solid fa-tags"></i>-Categorías
                     </a>
-                    <a class="has-background-danger-light has-text-dark navbar-item">
-                        Reporte
+                    <a href="#cont-report" class="has-background-danger-light has-text-dark navbar-item">
+                        <i class="fa-sharp fa solid fa-pie-chart"></i>-Reporte
                     </a>
-              </div>
-              <!-- <button id="close-modal-nav" class="modal-close is-large" aria-label="close">&times;</button> -->
+                </div>
             </div>
+        </header>
+
         <main>
             <!-- seccion balance -->
             <section id="cont-balance"></section>
