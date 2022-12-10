@@ -10,68 +10,47 @@
 </head>
 
 <body>
-    <!-- <section class="container">
-        <header class="navbar-brand has-background-danger-light has-text-dark">
-            <nav  role="navigation" aria-label="main navigation">
-                <a href="">AhorrADAS</a>
-                <a id="burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                    <div class="container" >
-                        <a href="" id="balance" aria-hidden="true"></a>
-                        <a href="" id="category" aria-hidden="true"></a>
-                        <a href="" id="report" aria-hidden="true"></a>
-                    </div>
-                </a>
-            </nav>
-        </header>
-
-    </section> -->
     <section>
-        <header>
-            <nav>
-                <h1></h1>
-                <!-- menu burger -->
-            </nav>
-        </header>
         <main>
             <!-- seccion balance -->
-            <section id="cont-balance" class="container columns ">
+            <section id="cont-balance" class="container columns p-5 ">
                 <aside class="column is-3">
+
                     <!-- modal balance vista totales -->
-                    <div id="modal-blc" class="box column ">
-                        <h1>Balance</h1>
+                    <div id="modal-blc" class="box column">
+                        <h1 class="title" >Balance</h1>
                         <div class="columns">
                             <h3 class="column is-6">Ganacias</h3>
-                            <p id="ttl-gain" class="column is-6">$0</p>
+                                <p id="ttl-gain" class="column is-6 has-text-primary has-text-right">$0</p>
                         </div>
                         <div class="columns">
                             <h3 class="column is-6">Gastos</h3>
-                            <p id="ttl-factures" class="column is-6">$0</p>
-                        </div>                    
+                                <p id="ttl-factures" class="column is-6 has-text-danger has-text-right">$0</p>
+                        </div>
                         <div class="columns">
                             <h3 class="column is-6">Total</h3>
-                        <div class="columns">
-                            <p id="ttl" class="column is-6">$0</p>
-                        </div>                    
-                    </div> 
+                            <p id="ttl" class="column is-6 has-text-dark has-text-right">$0</p>
+                        </div>
+                    </div>
                     <!-- modal filtros balance -->
-                    <div id="modal-filters-blc" class="box column ">
-                        <div class="field columns">
-                            <h1 class="column is-9">Filtros</h1>
-                            <button class="button is-warning is-light column is-3">Ocultar filtros</button>
+                    <div id="modal-filters-blc" class="box column p-5 ">
+                        <div class="field container is-flex is-align-items-baseline">
+                            <h1 class="subtitle is-size-6 has-text-left ">Filtros</h1>
+                            <p class="has-text-right is-size-7 pl-3">Ocultar filtros</p>
                         </div>
                         <!-- tipo de dato -->
-                        <div class="field">
-                            <label for="type-filter" class="label">Tipo</label>
-                            <select name="type-filter" id="type-filter">
+                        <div class="field ">
+                            <label for="type-filter" class="label subtitle">Tipo</label>
+                            <select class="is-fullwidth" name="type-filter" id="type-filter">
                                 <option value="everybody">Todos</option>
                                 <option value="factures">Gasto</option>
                                 <option value="gain">Ganancia</option>
                             </select>
-                        </div> 
+                        </div>
                         <!-- categoria -->
                         <div class="field">
-                            <label for="category-filter" class="label">Categoría</label>
-                            <select type="radio" name="category" id="category-filter">
+                            <label for="category-filter" class="label subtitle">Categoría</label>
+                            <select class="is-fullwidth" type="radio" name="category" id="category-filter">
                                 <option value="all">Todas</option>
                                 <option value="food">Comida</option>
                                 <option value="services">Servicios</option>
@@ -81,13 +60,13 @@
                                 <option value="worked">Trabajo</option>
                             </select>
                         </div>
-                        <div class="field"> 
-                            <label for="since" class="label">Desde</label>
-                            <input id="since" type="date">
+                        <div class="field">
+                            <label for="since" class="label subtitle">Desde</label>
+                            <input class="is-fullwidth" id="since" type="date">
                         </div>
                         <div class="field">
-                            <label for="sort-by" class="label">Ordenar por</label>
-                            <select name="sort-by" id="sort-by">
+                            <label for="sort-by" class="label subtitle">Ordenar por</label>
+                            <select class="is-fullwidth" name="sort-by" id="sort-by">
                                 <option value="more-recent">Más recientes</option>
                                 <option value="less-recent">Menos recientes</option>
                                 <option value="higher-amount">Mayor monto</option>
@@ -96,21 +75,24 @@
                                 <option value="z/a">Z/A</option>
                             </select>
                         </div>
-                    </div> 
-                </aside>
-                
-                <!-- modal operaciones balance -->
-                <div id="modal-operaciones-blc" class="box column is-9 ">
-                    <div class="field colums">
-                        <h1 class="column">Operaciones</h1>
-                        <button class="button column is-full  is-warning is-light">Nueva operación</button>
-                        <figure class="image is-128x128">
-                            <img src="./assets/balance.svg">
-                          </figure>
-                        <h3 class="column">Sin resultados</h3>
-                        <p class="column">cambia los filtros o agrega operaciones</p>
                     </div>
-                </div> 
+
+                </aside>
+
+                <!-- modal operaciones balance -->
+                <div id="modal-operaciones-blc" class="box column is-9 p-5 has-text-centered ">
+                    <div class="field colums ">
+                        <div class="is-flex buttons is-align-items-baseline p-4">
+                            <h1 class="column has-text-left title">Operaciones</h1>
+                            <button class="button column is-small  is-warning is-light is-right">+ Nueva operación</button>
+                        </div>
+                        <figure class="image is-128x128 p-2 container p-5">
+                            <img src="./assets/balance.svg" class="is-center">
+                        </figure>
+                        <h3 class=" subtitle column p-4">Sin resultados</h3>
+                        <p class="column p-4">Cambia los filtros o agrega operaciones</p>
+                    </div>
+                </div>
             </section>
             <section id="cont-category"></section>
             <section id="cont-report"></section>
