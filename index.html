@@ -31,9 +31,11 @@
             </nav>
             <div id="modal-nav" class="navbar-menu ">
                 <div class="navbar-end">
-                    <a href="#cont-balance" class="has-background-danger-light has-text-dark navbar-item"><i class="fa-sharp fa solid fa-arrow-trend-up"></i>-Balance
+                    <a href="#cont-balance" class="has-background-danger-light has-text-dark navbar-item"><i
+                            class="fa-sharp fa solid fa-arrow-trend-up"></i>-Balance
                     </a>
-                    <a href="#cont-category" class="has-background-danger-light has-text-dark navbar-item"><i class="fa solid fa-tags"></i>-Categorías
+                    <a href="#cont-category" class="has-background-danger-light has-text-dark navbar-item"><i
+                            class="fa solid fa-tags"></i>-Categorías
                     </a>
                     <a href="#cont-report" class="has-background-danger-light has-text-dark navbar-item">
                         <i class="fa-sharp fa solid fa-pie-chart"></i>-Reporte
@@ -49,14 +51,14 @@
 
                     <!-- modal balance vista totales -->
                     <div id="modal-blc" class="box column">
-                        <h1 class="title" >Balance</h1>
+                        <h1 class="title">Balance</h1>
                         <div class="columns">
                             <h3 class="column is-6">Ganacias</h3>
-                                <p id="ttl-gain" class="column is-6 has-text-primary has-text-right">$0</p>
+                            <p id="ttl-gain" class="column is-6 has-text-primary has-text-right">$0</p>
                         </div>
                         <div class="columns">
                             <h3 class="column is-6">Gastos</h3>
-                                <p id="ttl-factures" class="column is-6 has-text-danger has-text-right">$0</p>
+                            <p id="ttl-factures" class="column is-6 has-text-danger has-text-right">$0</p>
                         </div>
                         <div class="columns">
                             <h3 class="column is-6">Total</h3>
@@ -115,7 +117,8 @@
                     <div class="field colums ">
                         <div class="is-flex buttons is-align-items-baseline p-4">
                             <h1 class="column has-text-left title">Operaciones</h1>
-                            <button class="button column is-small  is-warning is-light is-right">+ Nueva operación</button>
+                            <button class="button column is-small  is-warning is-light is-right">+ Nueva
+                                operación</button>
                         </div>
                         <figure class="image is-128x128 p-2 container p-5">
                             <img src="./assets/balance.svg" class="is-center">
@@ -125,7 +128,61 @@
                     </div>
                 </div>
             </section>
-            <section id="cont-category"></section>
+            <section id="cont-category ">
+                <div class="box">
+                    <div class="container">
+                        <h1 class="title">Categorías</h1>
+                        <label for="input-category subtitle">Nombre</label>
+                        <div class="field container buttons">
+                            <input class="is-fullwidth" type="text" id="input-category">
+                            <button class="button is-primary is-right ">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="  is-flex">
+                            <p class="is-left">Comidas</p>
+                            <div class="is-flex is-right">
+                                <a>Editar</a>
+                                <a>Eliminar</a>
+                            </div>
+                        <div class="container is-flex ">
+                            <p class="is-left">Servicios</p>
+                            <div class="is-flex is-right">
+                                <a>Editar</a>
+                                <a>Eliminar</a>
+                            </div>
+                        </div>
+                        <div class="container is-flex">
+                            <p class="is-left">Transportes</p>
+                           <div class="is-flex is-right">
+                            <a>Editar</a>
+                            <a>Eliminar</a>
+                           </div>
+                        </div>
+                        <div class="container is-flex ">
+                            <p class="is-left">Educación</p>
+                            <div class="is-flex is-right">
+                                <a>Editar</a>
+                                <a>Eliminar</a>
+                            </div>
+                        </div>
+                        <div class="container is-flex ">
+                            <p class="is-left">Salidas</p>
+                            <div class="is-flex is-right">
+                                <a>Editar</a>
+                            <a>Eliminar</a>
+                            </div>
+                        </div>
+                        <div class="container is-flex ">
+                            <p class="is-left">Trabajo</p>
+                            <div class="is-flex is-right">
+                                <a>Editar</a>
+                            <a>Eliminar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="cont-report"></section>
         </main>
         <script src="./js/app.js"></script>
