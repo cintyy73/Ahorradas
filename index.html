@@ -44,7 +44,7 @@
             </div>
         </header>
 
-        <main>
+        <main class="container">
             <!-- seccion balance -->
             <section id="cont-balance" class="container columns p-5 ">
                 <aside class="column is-3">
@@ -113,7 +113,7 @@
                 </aside>
 
                 <!-- modal operaciones balance -->
-                <div id="modal-operaciones-blc" class="box column is-9 p-5 has-text-centered ">
+                <div id="modal-operaciones-blc" class="box container p-5 column is-9 p-5 has-text-centered ">
                     <div class="field colums ">
                         <div class="is-flex buttons is-align-items-baseline p-4">
                             <h1 class="column has-text-left title">Operaciones</h1>
@@ -128,56 +128,71 @@
                     </div>
                 </div>
             </section>
-            <section id="cont-category ">
+            <section id="cont-category " class="container p-5">
                 <div class="box">
                     <div class="container">
-                        <h1 class="title">Categorías</h1>
-                        <label for="input-category subtitle">Nombre</label>
-                        <div class="field container buttons">
-                            <input class="is-fullwidth" type="text" id="input-category">
-                            <button class="button is-primary is-right ">Agregar</button>
+                        <h1 class="title p-4">Categorías</h1>
+                        <div class="container p-5">
+                            <label class="subtitle" for="input-category">Nombre</label>
+                        </div>
+                        <div class="field  buttons columns is-flex is-align-content-baseline">
+                            <input class="column is-9" type="text" id="input-category">
+                            <button class="button has-text-center is-primary column is-small is-3 is-right ">Agregar</button>
                         </div>
                     </div>
-                    <div class="columns">
-                        <div class="  is-flex">
-                            <p class="is-left">Comidas</p>
-                            <div class="is-flex is-right">
-                                <a>Editar</a>
-                                <a>Eliminar</a>
+                    <div class="columns is-flex-wrap-wrap">
+                        <div class=" column is-12 is-flex">
+                            <div class="container">
+                                <p class="is-left">Comidas</p>
                             </div>
-                        <div class="container is-flex ">
-                            <p class="is-left">Servicios</p>
                             <div class="is-flex is-right">
-                                <a>Editar</a>
+                                <a class="pr-4">Editar</a>
                                 <a>Eliminar</a>
                             </div>
                         </div>
-                        <div class="container is-flex">
-                            <p class="is-left">Transportes</p>
-                           <div class="is-flex is-right">
-                            <a>Editar</a>
-                            <a>Eliminar</a>
+                        <div class="column is-12 is-flex ">
+                            <div class="container">
+                            <p class="is-left">Servicios</p>
+                            </div>
+                            <div class="is-flex is-right">
+                                <a class="pr-4">Editar</a>
+                                <a>Eliminar</a>
+                            </div>
+                        </div>
+                        <div class="column is-12 is-flex">
+                            <div class="container">
+                                <p class="is-left">Transportes</p>
+                            </div>
+                            <div class="is-flex is-right">
+                                <a class="pr-4">Editar</a>
+                                <a>Eliminar</a>
                            </div>
                         </div>
-                        <div class="container is-flex ">
-                            <p class="is-left">Educación</p>
+                        <div class="column is-12 is-flex ">
+                            <div class="container">
+                                <p class="is-left">Educación</p>
+                            </div>
                             <div class="is-flex is-right">
-                                <a>Editar</a>
+                                <a class="pr-4">Editar</a>
                                 <a>Eliminar</a>
                             </div>
                         </div>
-                        <div class="container is-flex ">
-                            <p class="is-left">Salidas</p>
+                        <div class="column is-12 is-flex ">
+                            <div class="container">
+                                <p class="is-left">Salidas</p>
+                            </div>
                             <div class="is-flex is-right">
-                                <a>Editar</a>
-                            <a>Eliminar</a>
+                                <a class="pr-4">Editar</a>
+                                <a>Eliminar</a>
                             </div>
                         </div>
-                        <div class="container is-flex ">
-                            <p class="is-left">Trabajo</p>
+                        <div class="column is-12 is-flex ">
+                            <div class="container">
+                                <p class="is-left">Trabajo</p>
+                            </div>
                             <div class="is-flex is-right">
-                                <a>Editar</a>
-                            <a>Eliminar</a>
+                                <a class="pr-4">Editar</a>
+                                <a>Eliminar</a>
                             </div>
                         </div>
                     </div>
