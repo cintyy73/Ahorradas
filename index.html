@@ -134,7 +134,7 @@
                 <!-- --------------------- -->
 
                 <!-- modal operaciones balance -->
-                <div id="modal-operaciones-blc" class="box column is-9 has-text-centered ">
+                <div id="modal-operation-blc" class="box column is-9 has-text-centered ">
                     <div class="field colums ">
                         <div class="is-flex is-align-items-baseline p-4">
                             <h1 class="column has-text-left title">Operaciones</h1>
@@ -143,18 +143,21 @@
                                     operación</button>
                             </div>
                         </div>
-                        <figure class="image is-128x128 container p-5">
-                            <img src="./assets/balance.svg" class="is-center">
-                        </figure>
-                        <h3 class=" subtitle column p-4">Sin resultados</h3>
-                        <p class="column p-4">Cambia los filtros o agrega operaciones</p>
+                        <div class="box-op">
+                            <figure class="image is-128x128 container p-5">
+                                <img src="./assets/balance.svg" class="is-center">
+                            </figure>
+                            <h3 class=" subtitle column p-4">Sin resultados</h3>
+                            <p class="column p-4">Cambia los filtros o agrega operaciones</p>
+                        </div>
+
                     </div>
                 </div>
                 <!-- --------------------- -->
                 
             </section>
             <!-- modal nueva operacion balance -->
-            <div id="new-op" class="box container p-5 m-5 ">
+            <div id="box-new-op" class="box container p-5 m-5 is-hidden">
                 <h1 class="title">Nueva operación</h1>
                 <div class="field">
                     <label for="new-op-desc" class="label subtitle">Descripción</label>
