@@ -13,6 +13,12 @@ const $btnAddNewOp = $("#btn-add-new-op");
 const $btnCancNewOp = $("#btn-canc-new-op");
 const $boxNewOp = $("#box-new-op");
 const $balance = $("#cont-balance");
+const $contInnerOp = $("#cont-inner-op");
+const $InewOpDescrp = $("#new-op-desc");
+const $InewOpCategory = $("#new-op-category-filter");
+const $InewOpDate = $("#new-op-date");
+const $InewOpAmount = $("#new-op-amount");
+const $InewOpType = $("#new-op-type-filter");
 /************FUNCTIONS*****************/
 //Functions NAV
 
@@ -39,15 +45,42 @@ const closeBoxNewOp = () => {
     openBalance()
 }
 
-// const addHtml = () => {
-    
 
-// }
+
+/*const addHtml = () => {
+
+    $contInnerOp.innerHTML=`
+    <div class=" is-flex">
+        <div id="description" class="column">
+            <p class="subtitle">Fecha</p>
+            <p>${}</p>
+        </div>
+        <div class="container column">
+            <p class="subtitle">Categoría</p>
+            <p class="has-text-${} has-background-text-${}">${}</p>
+        </div>
+        <div class="container column">
+            <p class="subtitle">Fecha</p>
+            <p>${}</p>
+        </div>
+        <div class="container column">
+            <p class="subtitle has-text-${}">Monto</p>
+            <p>${}</p>
+        </div>
+        <div class="container column">
+            <p class="subtitle">Acciones</p>
+            <div class="is-flex is-right">
+                <a class="pr-4">Editar</a>
+                <a>Eliminar</a>
+            </div>
+        </div>
+    </div>`
+}
+*/
 const addNewOp = () => {
     //addHtml()
     boxNewOp()
    closeBalance()
-
 }
 
 
