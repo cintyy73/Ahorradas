@@ -105,7 +105,7 @@
                         <div class="is-flex is-align-items-baseline p-4">
                             <h1 class="column has-text-left title">Operaciones</h1>
                             <div class="column is-right">
-                                <button class="button is-small  is-warning is-light " type="button">+ Nueva
+                                <button id="btn-new-op" class="button is-small  is-warning is-light " type="button">+ Nueva
                                     operación</button>
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                 
             </section>
             <!-- modal nueva operacion balance -->
-            <div id="new-op" class="box container p-5 m-5">
+            <div id="new-op" class="box container p-5 m-5 ">
                 <h1 class="title">Nueva operación</h1>
                 <div class="field">
                     <label for="new-op-desc" class="label subtitle">Descripción</label>
@@ -168,8 +168,8 @@
                     </div>
                 </div>
                 <div class="buttons is-right">
-                    <div class="button">Cancelar</div>
-                    <div class="button is-primary">Agregar</div>
+                    <div id="btn-canc-new-op" type="button" class="button">Cancelar</div>
+                    <div id="btn-add-new-op" type="button" class="button is-primary">Agregar</div>
                 </div>
             </div>
 
