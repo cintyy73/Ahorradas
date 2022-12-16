@@ -14,11 +14,22 @@ const $btnCancNewOp = $("#btn-canc-new-op");
 const $boxNewOp = $("#box-new-op");
 const $balance = $("#cont-balance");
 const $contInnerOp = $("#cont-inner-op");
-const $InewOpDescrp = $("#new-op-desc");
+const $InewOpDescrip = $("#new-op-desc");
 const $InewOpCategory = $("#new-op-category-filter");
 const $InewOpDate = $("#new-op-date");
 const $InewOpAmount = $("#new-op-amount");
 const $InewOpType = $("#new-op-type-filter");
+
+// ********---VARIABLES---************//
+let nameOp = "";
+let amountOp = "";
+let typeOp = "";
+let categOp = "";
+let dateOp = "";
+let colorAmount= "";
+
+
+
 /************FUNCTIONS*****************/
 //Functions NAV
 
@@ -45,27 +56,43 @@ const closeBoxNewOp = () => {
     openBalance()
 }
 
+//Functions CATEGORY
 
+const inputsDate = (e) =>{
+    nameOp  = $InewOpDescrip.value 
+    amountOp= $InewOpAmount.value
+    typeOp = $InewOpType.value
+    categOp= $InewOpCategory.value
+    dateOp = $InewOpDate.value
+}
 
-/*const addHtml = () => {
+const colorType = () =>{
+    if(typeOp===Ganancia){
+        colorAmount = "danger"
+    }
+    else{
+        colorAmount="primary"
+    }
+}
+const addHtml = () => {
 
-    $contInnerOp.innerHTML=`
+    $contInnerOp.innerHTML= `
     <div class=" is-flex">
         <div id="description" class="column">
             <p class="subtitle">Fecha</p>
-            <p>${}</p>
+            <p>${nameOp}</p>
         </div>
         <div class="container column">
             <p class="subtitle">Categoría</p>
-            <p class="has-text-${} has-background-text-${}">${}</p>
+            <p class="has-text-${colorAmount} has-background-text-${colorAmount}">${categOp}</p>
         </div>
         <div class="container column">
             <p class="subtitle">Fecha</p>
-            <p>${}</p>
+            <p>${dateOp}</p>
         </div>
         <div class="container column">
-            <p class="subtitle has-text-${}">Monto</p>
-            <p>${}</p>
+            <p class="subtitle has-text-${colorAmount}">Monto</p>
+            <p>${amountOp}</p>
         </div>
         <div class="container column">
             <p class="subtitle">Acciones</p>
@@ -76,13 +103,18 @@ const closeBoxNewOp = () => {
         </div>
     </div>`
 }
-*/
+
 const addNewOp = () => {
     //addHtml()
     boxNewOp()
    closeBalance()
 }
 
+const addOp = () =>{
+    closeBoxNewOp()
+    inputsDate()
+    addHtml()
+}
 
 /************EVENTS*****************/
 //Events nav
@@ -91,4 +123,4 @@ $btnBurger.addEventListener("click", burgerActive);
 //Events BALANCE
 $btnNewOp.addEventListener("click", addNewOp );
 $btnCancNewOp.addEventListener("click", closeBoxNewOp);
-$btnAddNewOp.addEventListener("click", closeBoxNewOp);
+$btnAddNewOp.addEventListener("click", addOp);
