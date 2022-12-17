@@ -1,7 +1,8 @@
 const $ = (selector) => document.querySelector(selector);
 
-//Elements 
 
+//Elements 
+let dateLocalSt = JSON.parse(localStorage.getItem("operationsOB"));
 //*nav
 const $btnBurger = $("#burger");
 const $modalNav = $("#modal-nav");
@@ -19,14 +20,15 @@ const $InewOpCategory = $("#new-op-category-filter");
 const $InewOpDate = $("#new-op-date");
 const $InewOpAmount = $("#new-op-amount");
 const $InewOpType = $("#new-op-type-filter");
-
-// ********---VARIABLES---************//
-let nameOp = "";
-let amountOp = "";
-let typeOp = "";
-let categOp = "";
-let dateOp = "";
-let colorAmount= "";
+let operations = dateLocalSt || [];
+let operation = {
+    nameOp : "",
+    amountOp : 0,
+    typeOp : "",
+    categOp : "",
+    dateOp : "",
+    colorAmount: "",
+};
 
 
 
@@ -68,11 +70,23 @@ const inputsDate = (e) =>{
 
 const colorType = () =>{
     if(typeOp===Ganancia){
-        colorAmount = "danger"
+        colorAmount = "danger" 
     }
     else{
         colorAmount="primary"
     } 
+}
+
+const addLocalStorage = () =>{
+    const   inputsValues = {...operation};
+    inputsValues.nameOp;  
+    inputsValues.amountOp;     
+    inputsValues.typeOp;
+    inputsValues.categOp;
+    inputsValues.dateOp;
+    operations.push(inputsValues);
+    localStorage.setItem("operationsOB", JSON.stringify(operations));
+
 }
 const addHtml = () => {
 
@@ -84,14 +98,14 @@ const addHtml = () => {
         </div>
         <div class="container column">
             <p class="subtitle">Categoría</p>
-            <p class="has-text-${colorAmount} has-background-text-${colorAmount}">${categOp}</p>
+            
         </div>
         <div class="container column">
             <p class="subtitle">Fecha</p>
             <p>${dateOp}</p>
         </div>
         <div class="container column">
-            <p class="subtitle has-text-${colorAmount}">Monto</p>
+            <p class="subtitle has-text-">Monto</p>
             <p>${amountOp}</p>
         </div>
         <div class="container column">
@@ -105,7 +119,7 @@ const addHtml = () => {
 }
 
 const addNewOp = () => {
-    //addHtml()
+
     boxNewOp()
    closeBalance()
 }
@@ -114,6 +128,7 @@ const addOp = () =>{
     closeBoxNewOp()
     inputsDate()
     addHtml()
+    addLocalStorage()
 }
 
 /************EVENTS*****************/
