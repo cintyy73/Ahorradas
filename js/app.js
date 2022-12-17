@@ -72,7 +72,7 @@ const colorType = () =>{
     }
     else{
         colorAmount="primary"
-    }
+    } 
 }
 const addHtml = () => {
 
