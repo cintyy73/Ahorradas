@@ -22,7 +22,10 @@ const $InewOpCategory = $("#new-op-category-filter");
 const $InewOpDate = $("#new-op-date");
 const $InewOpAmount = $("#new-op-amount");
 const $InewOpType = $("#new-op-type-filter");
-
+const $ttlGain = $("#ttl-gain");
+const $ttlFact = $("#ttl-factures");
+const $ttl = $("#ttl-");
+let ttlAmount = 0;
 let operations = dateLocalSt || [];
 let operation = {
     nameOp : "",
@@ -141,6 +144,21 @@ const addOperation = () =>{
  
 //en proceso?? 
 // }
+const ttlAmounts = () =>{
+    for (const operation of dateLocalSt) {
+        const {typeOp, amountOp} = operation
+        if (typeOp === "new-op-factures") {
+            console.log(amountOp);
+            ttlAmount += Number(amountOp)
+            console.log(ttlAmount);
+        }
+        else{
+            ttlAmount -= Number(amountOp)
+        }
+    }
+}
+
+
 
 const addNewOp = () => {
     boxNewOp()
@@ -153,6 +171,7 @@ const addOp = () =>{
     //addHtml()
     addLocalStorage()
     //addOperation()
+    ttlAmounts()
 }
 //no funciona inerr 
 /************EVENTS*****************/
