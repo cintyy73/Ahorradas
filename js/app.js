@@ -1,6 +1,5 @@
 const $ = (selector) => document.querySelector(selector);
 
-
 //Elements 
 //date local storage
 let dateLocalSt = JSON.parse(localStorage.getItem("operationsOB"));
@@ -24,8 +23,14 @@ const $InewOpAmount = $("#new-op-amount");
 const $InewOpType = $("#new-op-type-filter");
 const $ttlGain = $("#ttl-gain");
 const $ttlFact = $("#ttl-factures");
-const $ttl = $("#ttl-");
+const $ttl = $("#ttl");
+let ttlGain = 0;
+let ttlFact = 0;
 let ttlAmount = 0;
+let ttlF = 0;
+let ttlG =0;
+
+
 let operations = dateLocalSt || [];
 let operation = {
     nameOp : "",
@@ -93,7 +98,6 @@ const addLocalStorage = () =>{
     inputsValues.dateOp = dateOp;
     operations.push(inputsValues);
     localStorage.setItem("operationsOB", JSON.stringify(operations));
-    console.log(nameOp)
 }
 /*const addHtml = () => {
 
@@ -145,18 +149,31 @@ const addOperation = () =>{
 //en proceso?? 
 // }
 const ttlAmounts = () =>{
-    for (const operation of dateLocalSt) {
+    for (const operation of operations) {
         const {typeOp, amountOp} = operation
-        if (typeOp === "new-op-factures") {
-            console.log(amountOp);
-            ttlAmount += Number(amountOp)
-            console.log(ttlAmount);
-        }
-        else{
-            ttlAmount -= Number(amountOp)
-        }
+        typeOp === "new-op-factures" ? ttlF = ttlFact + Number(amountOp) : ttlG = ttlGain + Number(amountOp);
+    //ver porq suma en ganancias y gasto 
+      
+        // if (typeOp === "new-op-factures") {
+        //     ttlF = ttlFact + Number(amountOp)
+        // }
+        // else{
+        //     ttlG = ttlGain + Number(amountOp)
+        // }
+
     }
+    ttlGain = ttlG;
+    ttlFact = ttlF;
+    ttlAmount = ttlGain - ttlFact
 }
+//ver porq suma toods los numeros todoas las vueltsa 
+
+const ttlViewBalance = () => {
+    $ttlFact.innerHTML = ttlFact;
+    $ttlGain.innerHTML = ttlGain;
+    $ttl.innerHTML = ttlAmount;
+}
+
 
 
 
@@ -168,12 +185,17 @@ const addNewOp = () => {
 const addOp = () =>{
     closeBoxNewOp()
     inputsDate()
-    //addHtml()
     addLocalStorage()
-    //addOperation()
     ttlAmounts()
+    ttlViewBalance()
 }
-//no funciona inerr 
+
+// const openApp = () =>{
+//     ttlViewBalance()
+//     ttlAmounts()
+// }
+// openApp()
+
 /************EVENTS*****************/
 //Events nav
 $btnBurger.addEventListener("click", burgerActive);
