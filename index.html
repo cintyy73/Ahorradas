@@ -144,29 +144,43 @@
                                     operación</button>
                             </div>
                         </div>
-                        <div class="box-op">
-                            <figure class="image is-128x128 container p-5">
-                                <img src="./assets/balance.svg" class="is-center">
-                            </figure>
-                            <h3 class=" subtitle column p-4">Sin resultados</h3>
-                            <p class="column p-4">Cambia los filtros o agrega operaciones</p>
+                        <div id="cont-inner-op">
+                            <div>
+                                <figure class="image is-128x128 container p-5">
+                                    <img src="./assets/balance.svg" class="is-center">
+                                </figure>
+                                <h3 class=" subtitle column p-4">Sin resultados</h3>
+                                <p class="column p-4">Cambia los filtros o agrega operaciones</p>
+                            </div>
                         </div>
-
                     </div>
                 </div>
                 <!-- --------------------- -->
 
             </section>
-            <!--*****section category*****  -->
-            <section id="cont-category " class="container box m-5 p-5">
-                <h1 class="title p-4">Categorías</h1>
-                <div class="cont-new-categ">
-                    <div class="field">
-                        <label for="category-name" class="label subtitle">Nombre</label>
-                        <div class="control is-flex">
-                            <input class="input" type="text" id="category-name" type="text">
-                            <button type="button"
-                                class="button has-text-center is-primary ml-2 is-right ">Agregar</button>
+            <!-- modal nueva operacion balance -->
+            <div id="box-new-op" class="box container p-5 m-5 is-hidden">
+                <h1 class="title">Nueva operación</h1>
+                <div class="field">
+                    <label for="new-op-desc" class="label subtitle">Descripción</label>
+                    <div class="control ">
+                        <input class="input" id="new-op-desc" type="text">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="new-op-amount" class="label subtitle">Monto</label>
+                    <div class="control ">
+                        <input class="input" id="new-op-amount" type="text">
+                    </div>
+                </div>
+                <div class="field ">
+                    <label for="type-filter" class="label subtitle">Tipo</label>
+                    <div class="control ">
+                        <div class="select is-fullwidth">
+                            <select name="type-filter" id="new-op-type-filter">
+                                <option value="new-op-factures">Gasto</option>
+                                <option value="new-op-gain">Ganancia</option>
+                            </select>
                         </div>
                     </div>
                 </div>
