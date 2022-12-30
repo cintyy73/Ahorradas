@@ -198,7 +198,7 @@
                 <div class="field">
                     <label for="new-op-amount" class="label subtitle">Monto</label>
                     <div class="control ">
-                        <input class="input" id="new-op-amount" type="text">
+                        <input class="input" id="new-op-amount" type="number">
                     </div>
                 </div>
                 <div class="field ">
@@ -211,9 +211,27 @@
                             </select>
                         </div>
                     </div>
-                    <!-- modal for list category -->
-                    <div id="add-cat-list" class="container is-flex is-justify-content-space-between">
-
+                </div>
+                <div class="field">
+                    <label for="new-op-category-filter" class="label subtitle">Categoría</label>
+                    <div class="control ">
+                        <div class="select is-fullwidth">
+                            <select type="radio" name="category" id="new-op-category-filter">
+                                <option value="new-op-all">Todas</option>
+                                <option value="new-op-food">Comida</option>
+                                <option value="new-op-services">Servicios</option>
+                                <option value="new-op-departures">Salida</option>
+                                <option value="new-op-education">Educación</option>
+                                <option value="new-op-transportation">Transporte</option>
+                                <option value="worked">Trabajo</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="new-op-date" class="label subtitle">Desde</label>
+                    <div class="control ">
+                        <input class="input" id="new-op-date" type="date">
                     </div>
                 </div>
     </section>
