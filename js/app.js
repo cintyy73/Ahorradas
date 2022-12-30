@@ -6,9 +6,9 @@ let dateLocalSt = JSON.parse(localStorage.getItem("operationsOB"));
 //*nav
 const $btnBurger = $("#burger");
 const $modalNav = $("#modal-nav");
-const $btnBalance = $("#balance");
-const $btnReport = $("#report");
-const $btnCategory = $("#category");
+let $btnBalance = "";  
+let $btnReport="";   
+let $btnCategory=""; 
 //balance
 const $btnNewOp = $("#btn-new-op");
 const $btnAddNewOp = $("#btn-add-new-op");
@@ -29,8 +29,12 @@ let ttlFact = 0;
 let ttlAmount = 0;
 let ttlF = 0;
 let ttlG =0;
+// sections view
+const $viewBalance = $("#cont-balance");
+const $viewCategory = $("#cont-category");
+const $viewReport = $("#cont-report");
 
-
+/**hasta aca */
 let operations = dateLocalSt || [];
 let operation = {
     nameOp : "",
@@ -51,6 +55,30 @@ const burgerActive = ()=>{
     $modalNav.classList.toggle("is-active");
 
 }
+
+//vistas 
+const viewsReport = () =>{
+    $btnBalance.classList.add("is-hidden");
+    $btnReport.classList.remove("is-hidden");
+    $btnCategory.classList.add("is-hidden");
+}
+$btnBalance= $("#balance");
+$btnReport= $("#report");
+$btnCategory= $("#category");
+
+const viewsCategory = () =>{
+    $btnBalance.classList.add("is-hidden");
+    $btnReport.classList.add("is-hidden");
+    $btnCategory.classList.remove("is-hidden");
+}
+
+const viewsBalance = () =>{
+    $btnBalance.classList.remove("is-hidden");
+    $btnReport.classList.add("is-hidden");
+    $btnCategory.classList.add("is-hidden");
+}
+//cambiar id en los anchor de header y ver si funciona las vistas
+
 //Functions BALANCE
 const closeBalance = () => {
     $balance.classList.add("is-hidden");
@@ -148,6 +176,10 @@ const addOperation = () =>{
  
 //en proceso?? 
 // }
+
+
+
+
 const ttlAmounts = () =>{
     for (const operation of operations) {
         const {typeOp, amountOp} = operation
@@ -199,7 +231,9 @@ const addOp = () =>{
 /************EVENTS*****************/
 //Events nav
 $btnBurger.addEventListener("click", burgerActive);
-
+$btnReport.addEventListener("click", viewsReport);
+$btnCategory.addEventListener("click",viewsCategory );
+$btnBalance.addEventListener("click", viewsBalance);
 //Events BALANCE
 $btnNewOp.addEventListener("click", addNewOp );
 $btnCancNewOp.addEventListener("click", closeBoxNewOp);
