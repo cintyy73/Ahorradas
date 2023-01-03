@@ -49,7 +49,7 @@ let operation = {
 
 /************FUNCTIONS*****************/
 //Functions NAV
-
+//activa menu 
 const burgerActive = ()=>{
     $btnBurger.classList.toggle("is-active");
     $modalNav.classList.toggle("is-active");
@@ -61,6 +61,7 @@ const $btnBalance= $("#balance");
 const $btnReport= $("#report");
 const $btnCategory= $("#category");
 
+//activa vistas y/o oculta segun btn
 const viewsReport = () =>{
     $viewBalance.classList.add("is-hidden");
     $viewReport.classList.remove("is-hidden");
@@ -78,9 +79,10 @@ const viewsBalance = () =>{
     $viewReport.classList.add("is-hidden");
     $viewCategory.classList.add("is-hidden");
 }
-//cambiar id en los anchor de header y ver si funciona las vistas
 
 //Functions BALANCE
+
+//oculta o muestra vistas segun btn nueva operacion
 const closeBalance = () => {
     $balance.classList.add("is-hidden");
 }
@@ -100,6 +102,7 @@ const closeBoxNewOp = () => {
 
 //Functions CATEGORY
 
+// doy valor a las variables segun los inputs
 const inputsDate = (e) =>{
     nameOp  = $InewOpDescrip.value 
     amountOp = $InewOpAmount.value
@@ -108,15 +111,6 @@ const inputsDate = (e) =>{
     dateOp = $InewOpDate.value
 }
 
-// const colorType = () =>{
-//     if(typeOp===Ganancia){
-//         colorAmount = "danger" 
-//     }
-//     else{
-//         colorAmount="primary"
-//     } 
-//     console.log(colorAmount)
-// }
 
 const addLocalStorage = () =>{
     const   inputsValues = {...operation};
@@ -182,25 +176,28 @@ const typeFilter = (type) => {
     return operations.filter(operation=>operation.typeOp === type)
 }
 //doy valor a los arrays de gastos y ganacias
-ttlF = typeFilter("new-op-factures")
-ttlG = typeFilter("new-op-gain")
+    ttlF = typeFilter("new-op-factures")
+    ttlG = typeFilter("new-op-gain")
 
+    
 //sumo montos de ganancias
-const mountGain = () =>{
+const mountGain = (ttlG) =>{
     for (const operation of ttlG) {
         const {amountOp} = operation
         ttlGain += amountOp
-}
+        ttlAmount = ttlGain-ttlFact;
+    }
 }
 //sumo montos de gastos
-const mountFact = () =>{
+const mountFact = (ttlF) =>{
     for (const operation of ttlF) {
         const {amountOp} = operation
         ttlFact += amountOp
-}
+        ttlAmount = ttlGain-ttlFact;
+    }
 }
 
-
+//muestra valores de gastos y ganancias en aside de balance
 const ttlViewBalance = () => {
     $ttlFact.innerHTML = ttlFact;
     $ttlGain.innerHTML = ttlGain;
@@ -208,26 +205,31 @@ const ttlViewBalance = () => {
 }
 
 
-
+//ejecuto funciones necesarias para abrir modal btn nueva operacion
 
 const addNewOp = () => {
     boxNewOp()
     closeBalance()
 }
 
+//ejecuto funciones necesarias añadir operacion
+
 const addOp = () =>{
     closeBoxNewOp()
     inputsDate()
     addLocalStorage()
-    
+    mountFact(ttlF)
+    mountGain(ttlG)
     ttlViewBalance()
 }
 
-// const openApp = () =>{
-//     ttlViewBalance()
-
-// }
-// openApp()
+//ejecuto funciones necesarias para mostrar totales al abrir la pagina
+const openApp = () =>{
+    mountFact(ttlF)
+    mountGain(ttlG)
+    ttlViewBalance()
+}
+openApp()
 
 /************EVENTS*****************/
 //Events nav
