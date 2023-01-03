@@ -27,8 +27,8 @@ const $ttl = $("#ttl");
 let ttlGain = 0;
 let ttlFact = 0;
 let ttlAmount = 0;
-let ttlF = 0;
-let ttlG =0;
+let ttlF = [];
+let ttlG =[];
 // sections view
 const $viewBalance = $("#cont-balance");
 const $viewCategory = $("#cont-category");
@@ -121,7 +121,7 @@ const inputsDate = (e) =>{
 const addLocalStorage = () =>{
     const   inputsValues = {...operation};
     inputsValues.nameOp = nameOp;  
-    inputsValues.amountOp = amountOp;     
+    inputsValues.amountOp = Number(amountOp);     
     inputsValues.typeOp = typeOp;
     inputsValues.categOp = categOp;
     inputsValues.dateOp = dateOp;
@@ -177,29 +177,29 @@ const addOperation = () =>{
  
 //en proceso?? 
 // }
-
-
-
-
-const ttlAmounts = () =>{
-    for (const operation of operations) {
-        const {typeOp, amountOp} = operation
-        typeOp === "new-op-factures" ? ttlF = ttlFact + Number(amountOp) : ttlG = ttlGain + Number(amountOp);
-    //ver porq suma en ganancias y gasto 
-      
-        // if (typeOp === "new-op-factures") {
-        //     ttlF = ttlFact + Number(amountOp)
-        // }
-        // else{
-        //     ttlG = ttlGain + Number(amountOp)
-        // }
-
-    }
-    ttlGain = ttlG;
-    ttlFact = ttlF;
-    ttlAmount = ttlGain - ttlFact
+//filtra las operaciones segun parametro de tipo de op. gasto/ganancia
+const typeFilter = (type) => {
+    return operations.filter(operation=>operation.typeOp === type)
 }
-//ver porq suma toods los numeros todoas las vueltsa 
+//doy valor a los arrays de gastos y ganacias
+ttlF = typeFilter("new-op-factures")
+ttlG = typeFilter("new-op-gain")
+
+//sumo montos de ganancias
+const mountGain = () =>{
+    for (const operation of ttlG) {
+        const {amountOp} = operation
+        ttlGain += amountOp
+}
+}
+//sumo montos de gastos
+const mountFact = () =>{
+    for (const operation of ttlF) {
+        const {amountOp} = operation
+        ttlFact += amountOp
+}
+}
+
 
 const ttlViewBalance = () => {
     $ttlFact.innerHTML = ttlFact;
@@ -219,13 +219,13 @@ const addOp = () =>{
     closeBoxNewOp()
     inputsDate()
     addLocalStorage()
-    ttlAmounts()
+    
     ttlViewBalance()
 }
 
 // const openApp = () =>{
 //     ttlViewBalance()
-//     ttlAmounts()
+
 // }
 // openApp()
 
