@@ -24,6 +24,14 @@ const $InewOpType = $("#new-op-type-filter");
 const $ttlGain = $("#ttl-gain");
 const $ttlFact = $("#ttl-factures");
 const $ttl = $("#ttl");
+//vista de operaciones 
+const $modalListBlc = $("#modal-list-op")
+const $btnBlc =("#cont-btn")
+const $descrpBlc = $("#descrip-blc")
+const $categBlc = $("#categ-blc")
+const $dateBlc = $("#date-blc")
+const $amountBlc = $("#amount-blc")
+
 // seccion 
 const $viewBalance = $("#cont-balance");
 const $viewCategory = $("#cont-category");
@@ -122,36 +130,20 @@ const addLocalStorage = () =>{
     localStorage.setItem("operationsOB", JSON.stringify(operations));
 }
 
-/*const addHtml = () => {
-
-   
-//elements new
-let $$categoryOpp = $("#category");
-let $$nameOpp = $("#description");
-let $$dateOpp = $("#date");
-let $$amountOpp = $("#amount");
-
-const addOperation = () =>{
-    $contInnerOp.innerHTML += ` 
-    <div id="btn-x/a" class="container column">
-        <p class="subtitle">Acciones</p>
-        <div class="is-flex is-right">
-            <a class="pr-4">Editar</a>
-            <a>Eliminar</a>
-        </div>
-    </div>`
-    $$categoryOpp += `<p>${nameOp}</p>`
-    $$nameOpp += `<p>${nameOp}</p>`
-    $$dateOpp += ` <p>${dateOp}</p>`
-    $$amountOpp += `<p>${amountOp}</p>`
-}*/
-// const boxBalanceV = (operations) => {
-//     const {typeOp, amountOp} = operations;
-//     if(typeOp==="new-op-factures"){
-//         total=
-//     }
- 
-// }
+const addHtmlBlc = () => {
+    for (const operation of operations) {
+        console.log(operation);
+        $modalListBlc.classList.remove("is-hidden");
+        $contInnerOp.classList.add("is-hidden");
+        $descrpBlc.innerHTML += `<li>${operation.nameOp}<li>`
+        $categBlc.innerHTML += `<li>${operation.categOp}<li>`
+        $dateBlc.innerHTML += `<li>${operation.dateOp}<li>`
+        $amountBlc.innerHTML += `<li>${operation.amountOp}<li>`
+        $btnBlc.innerHTML + `
+        <button class="button is-small is-ghost">Editar</button>
+        <button class="button is-small is-ghost">Eliminar</button>`
+    }
+}
 
 //filtra las operaciones segun parametro de tipo de op. gasto/ganancia
 const typeFilter = (type) => {
@@ -207,11 +199,13 @@ const addOp = () =>{
     mountFact(ttlF)
     mountGain(ttlG)
     ttlViewBalance()
+    addHtmlBlc()
 }
 
 //ejecuto funciones necesarias para mostrar totales al abrir la pagina
 const openApp = () =>{
     ttlViewBalance()
+
 }
 openApp()
 
